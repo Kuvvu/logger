@@ -1,0 +1,23 @@
+{
+    "name": "kuvvu/logger",
+    "description": "",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kuvvu\\Envexample\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Simon Jenny",
+            "email": "simon.jenny@kuvvu.ch"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kuvvu\\Logger\\LoggerProvider"
+            ]
+        }
+    }
+}
