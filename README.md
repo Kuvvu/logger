@@ -1,15 +1,50 @@
-# Laravel Package : Create .env.example with Artisan
+# Laravel Package : Logger
 
 ## Installation
 
-composer require --dev kuvvu/envexample
+Add Repository to composer.json
+```
+{
+    "type": "vcs",
+    "url": "https://github.com/Kuvvu/logger.git"
+}
+```
+
+Add Require : "kuvvu/logger": "dev-main" and then
+
+```
+composer update
+```
 
 ## Configuration
 
-Publish config file:
+Update .env
+```
+LOG_CHANNEL=stack
+LOGGER_TOKEN=
+``` 
 
-php artisan vendor:publish --tag=env-example
+Update logging.php
 
-## Use
+Add Channel:
+```
+  'logger' => [
+      'driver' => 'custom',
+      'formatter' => Monolog\Formatter\JsonFormatter::class,
+      'via' => Kuvvu\Logger\Logger::class,
+  ],
+```
 
-php artisan make:env.example
+Update Stack:
+```
+'stack' => [
+    'driver' => 'stack',
+    'channels' => ['daily', 'logger'],
+    'ignore_exceptions' => false,
+],
+```
+
+Optional Publish config file: 
+```
+php artisan vendor:publish --tag=logger
+```
