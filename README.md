@@ -10,10 +10,9 @@ Add Repository to composer.json
 }
 ```
 
-Add Require : "kuvvu/logger": "dev-main" and then
-
+Install Package
 ```
-composer update
+composer require kuvvu/logger:dev-main 
 ```
 
 ## Configuration
