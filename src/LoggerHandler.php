@@ -11,9 +11,9 @@ class LoggerHandler extends AbstractProcessingHandler {
     {
 
         Http::withToken(env('LOGGER_TOKEN'))
-        ->post(config('logger.endpoint', env('APP_URL')), [
+        ->post(config('logger.endpoint', 'https://dev.kuvvu.ch/api/log'), [
             'data'    => $record,
-            'project' => config('logger.project', 'https://dev.kuvvu.ch/api/log') 
+            'project' => config('logger.project', env('APP_URL')) 
         ]);
 
     }
