@@ -2,9 +2,8 @@
 
 return [
 
-    /* Create a copy/backup of current env.example at start */
+    'endpoint' => env('LOGGER_URL', 'https://log.ops.kuvvu.ch/api/log'),
+    'project'  => env('APP_URL', 'http://localhost'),
+    'token'    => env('LOGGER_TOKEN', '')
 
-    'endpoint' => env('KUVVU_LOG_URL', 'https://log.kuvvu.ch/api/log'),
-    'project'  => env('APP_URL')
-  
 ];
